@@ -1,18 +1,19 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useCompletion } from 'ai/react'
 
 const Loading = () => (
-  <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
     </svg>
 )
 
 export default function GenerateFood() {
   const [members, setMembers] = useState(['John Doe', 'Jane Doe', 'Jimmy Doe', 'Jenny Doe'])
-  const [ingredients, setIngredients] = useState(['Pollo', 'Tomates', 'ajo', 'papa'])
+  const [ingredients, setIngredients] = useState([]);
+  const [ingredientesSeleccionados, setIngredientesSeleccionados] = useState([])
   const [recipes, setRecipes] = useState([])
 
   const { complete, isLoading } = useCompletion({
@@ -21,31 +22,61 @@ export default function GenerateFood() {
 
   const generateRecipes = async () => {
     const ingredientsAndMembers = {
-      ingredients: ingredients,
+      ingredients: ingredientesSeleccionados,
       members: members
     }
-    console.log('data',ingredientsAndMembers);
-    // const result = await complete(ingredients.join(', '))
-    const result = await complete(ingredientsAndMembers)
-    console.log('result', result);
-    const parsedRecipes = JSON.parse(result);
-    console.log('parsedRecipes', parsedRecipes);
-    setRecipes(parsedRecipes)
+
+    console.log(ingredientsAndMembers)
+    // const result = await complete(ingredientsAndMembers)
+    // const parsedRecipes = JSON.parse(result);
+    // setRecipes(parsedRecipes)
   }
+
+  
+
+  useEffect(() => {
+    async function fetchIngredients() {
+      const response = await fetch('/api/food');
+      const data = await response.json();
+      setIngredients(data);
+    }
+
+    fetchIngredients();
+  }, []);
+
+  if (ingredients.length === 0) {
+    return <div>Cargando...</div>;
+  }
+
+
+ // genera un componente chip que al presionarlo se elimina de la lista de ingredientes, tambien que cambie de color
+  const Chip = ({ ingredient }) => {
+    const [selected, setSelected] = useState(false)
+
+    const handleSelect = () => {  
+      setSelected(true)
+    }
+
+    return (
+      <button
+        onClick={handleSelect}
+        className={`px-4 py-2 rounded-full text-sm ${selected ? 'bg-green-800 text-white' : 'bg-gray-200 text-gray-800'}`}
+      >
+        {ingredient.nombre}
+      </button>
+    )
+  }
+
+
 
   return (
     <div className="max-w-2xl mx-auto">
       <h2 className="text-3xl text-green-800 font-bold mb-6">Obtener receta</h2>
       <div className="mb-4">
-        <h3 className="text-lg mb-2">Ingredientes disponibles:</h3>
+        <h3 className="text-lg mb-2">Elige los ingredientes que quieres cocinar:</h3>
       <div className="mb-8 flex flex-wrap gap-2">
         {ingredients.map((ingredient, index) => (
-          <span
-            key={index}
-            className="bg-gray-800 text-gray-200 px-4 py-2 rounded-full text-sm"
-          >
-            {ingredient}
-          </span>
+          <Chip key={index} ingredient={ingredient} />
         ))}
       </div>
       </div>
