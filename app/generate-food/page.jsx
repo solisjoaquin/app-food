@@ -54,7 +54,7 @@ export default function GenerateFood() {
         disabled={isLoading}
         className="bg-green-800 w-full text-white p-4 rounded-xl hover:bg-green-700 transition duration-300 disabled:bg-green-600"
       >
-        {isLoading ? <div className="flex items-center justify-center"><Loading /> Generarando recetas</div> : 'Generar recetas'}
+        {isLoading ? <div className="flex items-center justify-center"><Loading /> Generando recetas</div> : 'Generar recetas'}
       </button>
       {recipes.length > 0 && (
         <div className="mt-8">
