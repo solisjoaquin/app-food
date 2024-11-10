@@ -54,7 +54,7 @@ export default function History() {
       <ul className="space-y-3">
         {recipes.map((receta, index) => (
           <li key={index} className="bg-white p-4 rounded shadow-lg">
-            <h2 className="text-xl font-seminbold mb-2">{receta.titulo}</h2>
+            <h2 className="text-xl font-bold mb-2">{receta.titulo}</h2>
             <div>
               {saltoDeLinea(receta.descripcion)}
             </div>

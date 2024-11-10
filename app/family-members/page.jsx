@@ -38,7 +38,7 @@ export default function FamilyMembers() {
                         
                         <div className="">Nombre: {member.nombre}</div>
                         <div className="">Perfil: {perfiles(member.perfil_alimenticio)}</div>
-                        {member.deficiencia? <div className="text-red-500">Condicion: {member.deficiencia}</div>: null}
+                        {member.deficiencia? <div className="text-[#24C690]">Condicion: {member.deficiencia}</div>: null}
                     </li>
                 ))}
             </ul>

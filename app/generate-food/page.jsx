@@ -52,7 +52,7 @@ export default function GenerateFood() {
       <button
         onClick={generateRecipes}
         disabled={isLoading}
-        className="bg-green-800 w-full text-white p-4 rounded-xl hover:bg-green-700 transition duration-300 disabled:bg-green-600"
+        className="bg-[#24C690] shadow-lg w-full text-white p-4 rounded-xl hover:bg-green-700 transition duration-300 disabled:bg-green-600"
       >
         {isLoading ? <div className="flex items-center justify-center"><Loading /> Generando recetas</div> : 'Generar recetas'}
       </button>

@@ -44,7 +44,7 @@ export default function AddMember() {
             required
           />
         </div>
-        <button type="submit" className="w-full bg-green-800 text-white p-4 rounded-lg hover:bg-gren-600 transition duration-300">
+        <button type="submit" className="w-full bg-[#24C690] shadow-lg text-white p-4 rounded-lg hover:bg-gren-600 transition duration-300">
           Agregar familiar
         </button>
       </form>
