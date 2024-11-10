@@ -38,6 +38,12 @@ export default function History() {
     fetchrecipes();
   }, []);
 
+  const saltoDeLinea = (text) => {
+    // si detecta un punto lo reemplaza por un punto y un salto de linea
+    return text.replace(/\./g, '.\n');
+
+  }
+
   if (recipes.length === 0) {
     return <div>Cargando...</div>;
   }
@@ -50,7 +56,7 @@ export default function History() {
           <li key={index} className="bg-white p-4 rounded shadow-lg">
             <h2 className="text-xl font-seminbold mb-2">{receta.titulo}</h2>
             <div>
-              {receta.descripcion}
+              {saltoDeLinea(receta.descripcion)}
             </div>
             
             </li>
