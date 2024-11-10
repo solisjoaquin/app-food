@@ -31,6 +31,7 @@ export default function AddFood() {
         <button type="submit" className="w-full bg-[#24C690] text-white p-4 rounded hover:bg-green-600 transition duration-300 shadow-lg">
           Agregar
         </button>
+
       </form>
     </div>
   )
