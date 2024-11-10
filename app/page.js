@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </div>
       
-      <div className="mb-6 bg-green-200 p-3">
+      <div className="mb-12 bg-green-200 p-3 ">
         <h2 className="text-2xl font-semibold mb-8">Grupo Familiar</h2>
         <div className="grid grid-cols-2 gap-4">
           <Link href="/add-member" className="bg-green-800 text-white p-4 rounded-xl hover:bg-green-900 transition duration-300 flex flex-col items-center justify-center">
