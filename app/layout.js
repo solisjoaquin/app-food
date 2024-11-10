@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-center">
               <div className="flex justify-around gap-4">
-              <Link href="/" className="py-4 px-2">Home</Link>
+                <Link href="/" className="py-4 px-2">Home</Link>
                 <Link href="/family-members" className="py-4 px-2">Perfil</Link>
                 <Link href="/generate-food" className="py-4 px-2">Cocinar</Link>
                 <Link href="/history" className="py-4 px-2">Historial</Link>
