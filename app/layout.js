@@ -15,7 +15,7 @@ const Logo = () => (
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-green-200">
+      <body className="min-h-screen">
         <nav className="bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-center">
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           {children}
         </div>
 
-        <footer className="fixed bottom-0 left-0 z-50 w-full h-16 bg-gray-900 text-white border-t border-gray-200">
+        <footer className="fixed bottom-0 left-0 z-50 w-full h-16 bg-[#1E1E1E] text-white border-t border-gray-200">
           <div className="max-w-6xl mx-auto px-4">
             <div className="flex justify-center">
               <div className="flex justify-around gap-8">
