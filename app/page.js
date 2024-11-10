@@ -28,7 +28,7 @@ export default function Home() {
       </div>
       
       <div className="mb-12 bg-green-200 p-3">
-        <h2 className="text-2xl font-semibold mb-8">Menues</h2>
+        <h2 className="text-2xl font-semibold mb-8">Menú</h2>
         <div className="grid grid-cols-2 gap-4">
           <Link href="/history" className="bg-green-800 text-white p-4 rounded hover:bg-green-900 transition duration-300 flex flex-col items-center justify-center">
           <div className="flex justify-center mb-2">
