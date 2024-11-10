@@ -22,7 +22,7 @@ export default function FamilyMembers() {
                 {members.map((member, index) => (
                     <li key={index} className="bg-white p-2 rounded shadow">
                         <div>Name: {member.name}</div>
-                        <div>Profile: {member.profile}</div>
+                        <div className="">Profile: {member.profile}</div>
                     </li>
                 ))}
             </ul>

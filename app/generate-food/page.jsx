@@ -24,9 +24,12 @@ export default function GenerateFood() {
       ingredients: ingredients,
       members: members
     }
+    console.log('data',ingredientsAndMembers);
     // const result = await complete(ingredients.join(', '))
     const result = await complete(ingredientsAndMembers)
-    const parsedRecipes = JSON.parse(result)
+    console.log('result', result);
+    const parsedRecipes = JSON.parse(result);
+    console.log('parsedRecipes', parsedRecipes);
     setRecipes(parsedRecipes)
   }
 
