@@ -22,7 +22,7 @@ export async function POST(req) {
     },
       {
         role: 'user',
-        content: `Genera 5 recetas para los siguientes usuarios y sus perfiles: ${prompt.members.join(', ')} y los siguientes ingredientes ${prompt.ingredients.join(', ')}. Ten en cuenta el perfil de cada miembro al generar las recetas.`
+        content: `Genera 5 recetas para los siguientes usuarios y sus perfiles: ${prompt.members.join(', ')} y los siguientes ingredientes ${prompt.ingredients.join(', ')}. Ten en cuenta el perfil de cada miembro al generar las recetas. Prioriza comida tradicional argentina.`
     }
     ],
     max_tokens: 1000,

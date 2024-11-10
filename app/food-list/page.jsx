@@ -8,6 +8,8 @@ export default function FoodList() {
     async function fetchIngredients() {
       const response = await fetch('/api/food');
       const data = await response.json();
+
+      console.log('data', data);
       setIngredients(data);
     }
 
@@ -15,15 +17,15 @@ export default function FoodList() {
   }, []);
 
   if (ingredients.length === 0) {
-    return <div>Loading food list...</div>;
+    return <div>Cargando...</div>;
   }
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4">Food List</h2>
+      <h2 className="text-2xl font-bold mb-4">Lista de ingredientes</h2>
       <ul className="space-y-3">
         {ingredients.map((ingredient, index) => (
-          <li key={index} className="bg-white p-4 rounded shadow-lg">{ingredient.name} ({ingredient.quantity})</li>
+          <li key={index} className="bg-white p-4 rounded shadow-lg">{ingredient.nombre} ({ingredient.cantidad})</li>
         ))}
       </ul>
     </div>
