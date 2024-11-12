@@ -66,22 +66,12 @@ const FoodList = ({ foods }) => (
 const RecipesList = ({ foods }) => (
   <div className="flex gap-2 overflow-x-scroll bg-[#fafafa]">
     {foods.map((food, index) => (
-      <a
-        key={index}
-        href="#"
-        class="bg-[#fafafa] flex flex-col items-center border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100"
-      >
-        <img
-          class="object-cover w-full rounded-t-lg h-54 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-          src="https://www.feriamasticar.com.ar/wp-content/uploads/2024/04/milanesa-de-pollo-argentina-1.jpg"
-          alt=""
-        />
-        <div class="flex flex-col justify-between p-4 leading-normal bg-[#fafafa]">
-          <h5 class="bg-[#fafafa] mb-2 text-2xl font-bold tracking-tight text-gray-900">
-            {food.name}
-          </h5>
+            <div class="bg-white rounded-lg shadow-lg md:flex">
+        <img src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8" alt="Laptop on Desk" className="md:w-1/3 rounded-t-lg md:rounded-l-lg md:rounded-t-none" />
+        <div class="p-6">
+          <h2 class="font-bold text-xl md:text-3xl mb-2 text-orange-700">{food.name}</h2>
         </div>
-      </a>
+    </div>
     ))}
   </div>
 );
@@ -118,16 +108,32 @@ export default function Home() {
       </nav>
 
       <div className="mb-3 p-3">
-        <h2 className="text-xl font-semibold mb-3">Mi heladera</h2>
+      <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold">Mi heladera</h2>
+          <p className="text-sm text-gray-500">
+            ver mas 
+          </p>
+        </div>
         <div className="">
           <FoodList foods={foods} />
         </div>
       </div>
 
       <div className="mb-3 p-3">
-        <h2 className="text-xl font-semibold mb-3">Mis recetas</h2>
-        <div className="">
-          <RecipesList foods={recetas} />
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="text-xl font-semibold">Mis recetas</h2>
+          <p className="text-sm text-gray-500">
+            ver mas 
+          </p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg flex">
+          <img src="https://www.indega.com.py/primicia/wp-content/uploads/2022/04/pure-de-papa-con-pollo-broaster-large-qlJiPE4lyS.jpeg" alt="Laptop on Desk" class="w-1/3 rounded-l-lg md:rounded-t-none" />
+          <div class="p-6">
+            <h2 class="font-bold text-xl md:text-3xl mb-2 text-orange-700">Milanesas con pure</h2>
+            <p class="text-orange-700">
+              ver receta
+            </p>
+          </div>
         </div>
       </div>
 
