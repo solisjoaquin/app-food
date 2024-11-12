@@ -63,19 +63,6 @@ const FoodList = ({ foods }) => (
   </div>
 );
 
-const RecipesList = ({ foods }) => (
-  <div className="flex gap-2 overflow-x-scroll bg-[#fafafa]">
-    {foods.map((food, index) => (
-            <div class="bg-white rounded-lg shadow-lg md:flex">
-        <img src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8" alt="Laptop on Desk" className="md:w-1/3 rounded-t-lg md:rounded-l-lg md:rounded-t-none" />
-        <div class="p-6">
-          <h2 class="font-bold text-xl md:text-3xl mb-2 text-orange-700">{food.name}</h2>
-        </div>
-    </div>
-    ))}
-  </div>
-);
-
 const foods = [
   { name: "Leche", quantity: "1 litro" },
   { name: "Huevos", quantity: "6" },
